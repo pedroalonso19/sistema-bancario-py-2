@@ -1,67 +1,90 @@
-# Simulação - Sistema Bancário em Python
+# 💳 Sistema Bancário em Python
 
-Este projeto é uma aplicação de terminal desenvolvida em Python que simula operações bancárias simples como **depósito**, **saque**, **visualização de extrato** e **saída do sistema**.
+Este é um sistema bancário simples desenvolvido em Python para simular operações básicas como **depósitos**, **saques**, **emissão de extratos**, **cadastro de usuários** e **gerenciamento de contas**. O projeto é ideal para iniciantes que desejam praticar **funções**, **parâmetros posicionais e nomeados**, e **estruturas de controle**.
 
-## 🚀 Funcionalidades
+---
 
-O sistema oferece as seguintes funcionalidades:
+## 📋 Funcionalidades
 
-1. **Depósito**
-   - Permite ao usuário inserir um valor positivo para depósito.
-   - Atualiza o saldo e registra a operação no extrato.
+- [x] Depósito em conta  
+- [x] Saque com limite de valor e número de operações  
+- [x] Emissão de extrato bancário  
+- [x] Cadastro de novos usuários  
+- [x] Criação de novas contas bancárias vinculadas a usuários  
+- [x] Listagem de contas cadastradas  
 
-2. **Saque**
-   - Permite saques limitados a 3 por sessão.
-   - Cada saque possui limite de R$500,00.
-   - Verifica:
-     - Se o saldo é suficiente.
-     - Se o valor digitado é válido (positivo).
-     - Se ainda não atingiu o número máximo de saques.
-   - Atualiza o saldo e registra a operação no extrato.
+---
 
-3. **Extrato**
-   - Exibe todas as operações realizadas (depósitos e saques).
-   - Mostra o saldo final.
+## 🚀 Como Executar
 
-4. **Sair**
-   - Encerra a aplicação.
+1. Certifique-se de ter o Python 3 instalado.
+2. Salve o código em um arquivo chamado `banco.py`.
+3. No terminal, navegue até a pasta onde está o arquivo e execute:
 
-## ⚙️ Como funciona
+```bash
+python banco.py
+```
 
-O sistema utiliza um **laço `while True`** para manter o programa em execução até o usuário optar por sair (opção `0`). A interação acontece por meio do terminal, com base na entrada de números que representam cada operação.
+---
 
-### Variáveis principais
+## 🧠 Estrutura do Projeto
 
-- `saldo`: valor inicial da conta (R$450,00).
-- `limite`: valor máximo permitido por saque (R$500,00).
-- `numero_saques`: contador de saques realizados.
-- `LIMITE_SAQUES`: limite máximo diário de saques (3).
-- `extrato`: string que armazena o histórico de transações.
+### Funções principais:
 
-## 💡 Exemplo de uso
+- `realizar_saque(...)`: Realiza saque com validação de saldo, limite e número de saques diários.
+- `realizar_deposito(...)`: Permite depósitos com valor positivo.
+- `mostrar_extrato(...)`: Exibe o extrato da conta e o saldo atual.
+- `cadastrar_usuario(lista_usuarios)`: Registra um novo usuário com CPF único.
+- `abrir_conta(agencia, numero, lista_usuarios)`: Cria uma nova conta bancária vinculada a um CPF existente.
+- `listar_contas(contas)`: Exibe todas as contas bancárias registradas.
 
+### Execução principal:
+
+- O programa inicia com um menu interativo que permite ao usuário escolher entre as operações disponíveis.
+- Uma conta padrão já é criada automaticamente para facilitar testes rápidos.
+
+---
+
+## 💡 Exemplo de Uso
+
+```
 ========Digite a opção desejada=========
-1. Depósito
-2. Saque
-3. Extrato
-0. Sair
+    1. Depósito
+    2. Saque
+    3. Extrato
+    4. Criar usuário
+    5. Criar conta
+    6. Listar contas
+    0. Sair
+```
 
+---
 
-Ao selecionar `1`, o usuário será solicitado a digitar o valor do depósito.
+## 🛠 Tecnologias Utilizadas
 
-Ao selecionar `2`, o sistema irá solicitar o valor do saque, validando as regras de saldo, limite e quantidade de saques.
+- **Python 3.10+**
+- Estruturas básicas de dados: listas e dicionários
+- Modularização de funções
+- Manipulação de entrada/saída no terminal
 
-Ao selecionar `3`, o extrato de operações será exibido com o saldo atual.
-
-Ao selecionar `0`, o funcionamento será interrompido.
-
-## 🛠️ Requisitos
-
-- Python 3.x
+---
 
 ## 📌 Observações
 
-- Saques e depósitos com valores negativos são considerados inválidos.
-- O sistema não possui autenticação.
-- O extrato é exibido apenas na sessão atual.
+- O número máximo de saques por conta é **3**.
+- O valor máximo por saque é de **R$ 500,00**.
+- O CPF deve ser único no sistema.
+- A conta é criada apenas se o CPF já estiver cadastrado.
 
+---
+
+## 🧑‍💻 Autor
+
+Pedro Alonso Ribeiro Ferreira da Silva  
+Projeto desenvolvido para fins educacionais.
+
+---
+
+## 📄 Licença
+
+Este projeto é de uso livre para fins didáticos e acadêmicos.
