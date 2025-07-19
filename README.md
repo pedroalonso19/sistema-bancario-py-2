@@ -85,6 +85,3 @@ Projeto desenvolvido para fins educacionais.
 
 ---
 
-## 📄 Licença
-
-Este projeto é de uso livre para fins didáticos e acadêmicos.
